@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎您</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">欢迎使用</h1>
+        <p>当前日期：<span id="currentDate"></span></p>
+        
+        <h2>功能演示</h2>
+        <ul>
+            <li>这是一个响应式布局的网页</li>
+            <li>包含简单的CSS样式</li>
+            <li>支持基本JavaScript交互</li>
+        </ul>
+
+        <button class="button" onclick="showMessage()">点击获取消息</button>
+    </div>
+
+    <script>
+        // 显示当前日期
+        function updateDate() {
+            const date = new Date();
+            const options = { 
+                year: 'numeric', month: 'long', day: 'numeric',
+                weekday: 'long', hour: '2-digit', minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = 
+                date.toLocaleDateString('zh-CN', options) + 
+                ' ' + 
+                date.toLocaleTimeString('zh-CN', { hour12: false });
+        }
+        setInterval(updateDate, 1000);
+
+        // 消息弹窗
+        function showMessage() {
+            
+        }
+    </script>
+</body>
+</html>
